@@ -1,28 +1,26 @@
 /// <reference path="../typings/angular2/angular2.d.ts" />
 import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
+import {RouterOutlet, RouterLink, routerInjectables, RouteConfig} from 'angular2/router';
+import {Home} from './components/home';
+import {Login} from './components/login';
+import {About} from './components/about';
 
-import {NamesList} from './services/NameList';
+
+// import {NamesList} from './services/NameList';
 
 @Component({
-  selector: 'sample-app',
-  appInjector: [NamesList]
+  selector: 'app'
 })
 @View({
-  templateUrl: './templates/sample-app.html',
-  directives: [NgFor]
+  templateUrl: './templates/app.html',
+  directives: [RouterOutlet, RouterLink]
 })
-class SampleApp {
-  names: Array<string>;
-  newName: string;
-
-  constructor(list: NamesList) {
-    this.names = list.get();
-    this.newName = '';
-  }
-  addName(newname) {
-    this.names.push(newname.value);
-    newname.value = '';
-  }
+@RouteConfig([
+  {path: '/', component: Home, as: 'home'},
+  {path: '/login', component: Login, as: 'login'},
+  {path: '/about', component: About, as: 'about'}
+])
+class App {
 }
 
-bootstrap(SampleApp);
+bootstrap(App,[routerInjectables]);

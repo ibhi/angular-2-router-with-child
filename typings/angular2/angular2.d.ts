@@ -766,4 +766,5 @@ declare module "angular2/router" {
   var routerInjectables: any;
   var RouteConfigAnnotation: any;
   var RouteConfig: any;
+  var routerDirectives: any;
 }
