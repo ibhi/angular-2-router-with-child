@@ -767,4 +767,6 @@ declare module "angular2/router" {
   var RouteConfigAnnotation: any;
   var RouteConfig: any;
   var routerDirectives: any;
+
+  interface Router{registry:any, pipeline:any, parent:any, hostComponent:any}
 }

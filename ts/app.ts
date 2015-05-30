@@ -4,9 +4,9 @@ import {RouterOutlet, RouterLink, routerInjectables, RouteConfig} from 'angular2
 import {Home} from './components/home';
 import {Login} from './components/login';
 import {About} from './components/about';
+import {HomeLeft} from './components/home-left';
+import {HomeRight} from './components/home-right';
 
-
-// import {NamesList} from './services/NameList';
 
 @Component({
   selector: 'app'
